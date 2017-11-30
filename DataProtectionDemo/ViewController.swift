@@ -15,9 +15,10 @@ class ViewController: UIViewController
 
     func initializeStartUp()
     {
-        let keyAsString = "hellohellohellohellohellohellohellohellohellohellohellohellohell"
+        var keyAsString = App.generateRandomBytes()
+        keyAsString="asdfghjkasdfghjkasdfghjkasdfghjkasdfghjkasdfghjkasdfghjkasdfghjk"
         var key = Data(count: 64)
-        key = keyAsString.data(using: String.Encoding.utf8)!
+        key = (keyAsString?.data(using: String.Encoding.utf8)!)!
         
         CDManipulator.setKey(key)
         
@@ -89,26 +90,25 @@ class ViewController: UIViewController
     
     override func viewDidLoad()
     {
-//        print("#Current adress of the file: \(Realm.Configuration.defaultConfiguration.fileURL!)")
-//        
-//        if(App.isItTheFirstRun())
-//         {
-//            initializeStartUp()
-//         }
-//        else
-//         {
-//            regularAccess()
-//         }
-//        
-//        
-//        var specificString = String(data: CDManipulator.getKey(), encoding: String.Encoding.utf8) as String!
-//        
-//        print("\n Key as string: \(specificString)")
+        print("#Current adress of the file: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        
+        if(App.isItTheFirstRun())
+         {
+            initializeStartUp()
+         }
+        else
+         {
+            regularAccess()
+         }
         
         
-        let word = App.generateRandomBytes()
+        var specificString = String(data: CDManipulator.getKey(), encoding: String.Encoding.utf8) as String!
         
-        print(word)
+        print("\n Key as string: \(specificString)")
+        
+//        let string=App.generateRandomBytes()
+//        print(string)
+
         
         
         

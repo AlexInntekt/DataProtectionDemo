@@ -36,7 +36,7 @@ class App
     class func generateRandomBytes() -> String?
     {
         
-        var keyData = Data(count: 64)
+        var keyData = Data(count: 48)
         let result = keyData.withUnsafeMutableBytes {
             (mutableBytes: UnsafeMutablePointer<UInt8>) -> Int32 in
             SecRandomCopyBytes(kSecRandomDefault, keyData.count, mutableBytes)
