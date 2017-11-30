@@ -16,10 +16,9 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
 
-        X.isItTheFirstRun()
+        App.isItTheFirstRun()
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
 

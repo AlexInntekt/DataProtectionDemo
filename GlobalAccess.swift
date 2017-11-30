@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class X
+class App
 {
+    //this global method checks if it is the first run of the app by using NSUserDefault:
     class func isItTheFirstRun() -> Bool
     {
         var isThisTheFirstRun = Bool()
