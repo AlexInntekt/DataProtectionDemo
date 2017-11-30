@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-DataProtectionDemo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-DataProtectionDemoTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-DataProtectionDemoUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5CBAE9DE701E87A0F6F65D1EBACE7A9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D5ABDB4B92A4853D661A11A5F57F0FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F5231A581460557C75A8C829720A4F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>941E057364FB426EEC1C148F1C5669D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3E03EFF275F4EC738B30C69556855C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

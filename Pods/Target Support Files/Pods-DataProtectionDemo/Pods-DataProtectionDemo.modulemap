@@ -1,0 +1,6 @@
+framework module Pods_DataProtectionDemo {
+  umbrella header "Pods-DataProtectionDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
