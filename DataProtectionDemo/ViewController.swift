@@ -13,10 +13,96 @@ import RealmSwift
 class ViewController: UIViewController
 {
 
+    func initializeStartUp()
+    {
+        let keyAsString = "hellohellohellohellohellohellohellohellohellohellohellohellohell"
+        var key = Data(count: 64)
+        key = keyAsString.data(using: String.Encoding.utf8)!
+        
+        CDManipulator.setKey(key)
+        
+        let encryptionConfig = Realm.Configuration(encryptionKey: key)
+        
+        do {
+            let realm = try Realm(configuration: encryptionConfig)
+            // At this point we have access to the database:
+            
+                                    try! realm.write()
+                                    {
+                                        let newCard = Card()
+                                        newCard.name = "heeeeeeey"
+                                        newCard.text = "encryption"
+            
+                                        realm.add(newCard)
+                                    }
+            
+            let cards = realm.objects(Card.self)
+            
+            print("Number of cards: ", cards.count)
+            
+            for card in cards
+            {
+                print("card: ",card)
+            }
+        }catch let error as NSError
+        {
+            fatalError("Error \(error)")
+        }
+
+    }
+    
+    func regularAccess()
+    {
+        let key = CDManipulator.getKey()
+        
+        let encryptionConfig = Realm.Configuration(encryptionKey: key)
+        
+        // Attempt to open the encrypted Realm
+        do {
+            let realm = try Realm(configuration: encryptionConfig)
+            // At this point we have access to the database:
+            
+            //                        try! realm.write()
+            //                        {
+            //                            let newCard = Card()
+            //                            newCard.name = "heeeeeeey"
+            //                            newCard.text = "encryption"
+            //
+            //                            realm.add(newCard)
+            //                        }
+            
+            let cards = realm.objects(Card.self)
+            
+            print("Number of cards: ", cards.count)
+            
+            for card in cards
+            {
+                print("card: ",card)
+            }
+        }catch let error as NSError
+        {
+            fatalError("Error \(error)")
+        }
+
+    }
+    
+    
     override func viewDidLoad()
     {
-
-        App.isItTheFirstRun()
+        print("#Current adress of the file: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        
+        if(App.isItTheFirstRun())
+         {
+            initializeStartUp()
+         }
+        else
+         {
+            regularAccess()
+         }
+        
+        CDManipulator.getKey()
+        
+        
         
         super.viewDidLoad()
     }

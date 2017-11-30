@@ -17,7 +17,7 @@ class CDManipulator
     //    attribute: binaryData
     
     //MARK: Write
-    func setKey(_ keyToStore: Data)
+    class func setKey(_ keyToStore: Data)
     {
         print("\nCDManipulator message: setKey() being called\n")
         clean()
@@ -32,7 +32,7 @@ class CDManipulator
     
     
     //MARK: Fetching the last key stored
-    func getKey() -> Data
+    class func getKey() -> Data
     {
         print("\nCDManipulator message: getKey() being called\n")
         
@@ -67,7 +67,7 @@ class CDManipulator
     }
     
     //MARK: cleaning the key storer:
-    func clean()
+    class func clean()
     {
         print("\nCDManipulator message: clean() being called\n")
         
