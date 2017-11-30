@@ -31,7 +31,23 @@ class App
         
         return isThisTheFirstRun
         
-    } 
+    }
+    
+    class func generateRandomBytes() -> String?
+    {
+        
+        var keyData = Data(count: 64)
+        let result = keyData.withUnsafeMutableBytes {
+            (mutableBytes: UnsafeMutablePointer<UInt8>) -> Int32 in
+            SecRandomCopyBytes(kSecRandomDefault, keyData.count, mutableBytes)
+        }
+        if result == errSecSuccess {
+            return keyData.base64EncodedString()
+        } else {
+            print("Problem generating random bytes")
+            return nil
+        }
+    }
 }
 
 

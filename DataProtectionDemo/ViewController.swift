@@ -89,18 +89,26 @@ class ViewController: UIViewController
     
     override func viewDidLoad()
     {
-        print("#Current adress of the file: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+//        print("#Current adress of the file: \(Realm.Configuration.defaultConfiguration.fileURL!)")
+//        
+//        if(App.isItTheFirstRun())
+//         {
+//            initializeStartUp()
+//         }
+//        else
+//         {
+//            regularAccess()
+//         }
+//        
+//        
+//        var specificString = String(data: CDManipulator.getKey(), encoding: String.Encoding.utf8) as String!
+//        
+//        print("\n Key as string: \(specificString)")
         
-        if(App.isItTheFirstRun())
-         {
-            initializeStartUp()
-         }
-        else
-         {
-            regularAccess()
-         }
         
-        CDManipulator.getKey()
+        let word = App.generateRandomBytes()
+        
+        print(word)
         
         
         
